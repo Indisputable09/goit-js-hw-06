@@ -7,14 +7,18 @@ formEl.addEventListener('submit', onfromElSubmit);
 
 function onfromElSubmit(event) {
     event.preventDefault();
+    const elements = { login: inputEmailEl.value, password: inputPasswordEl.value };
+    console.log(elements);
+
     if (inputEmailEl.value === "" || inputPasswordEl.value === "") {
         window.alert('All inputs must be filled');
     }
     else {
         const formData = new FormData(event.currentTarget);
         formData.forEach((value, name) => {
+        
         console.log(`${name}: `, value);
-            formEl.reset();
+        event.currentTarget.reset();
         });
     }
 };
