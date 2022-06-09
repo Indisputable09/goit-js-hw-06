@@ -18,7 +18,8 @@ function onfromElSubmit(event) {
         formData.forEach((value, name) => {
         
         console.log(`${name}: `, value);
-        event.currentTarget.reset();
+            event.currentTarget.reset();
         });
     }
+    
 };
